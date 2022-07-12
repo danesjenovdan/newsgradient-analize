@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newsgradient-analize
+  labels:
+    app: newsgradient-analize
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newsgradient-analize
+  template:
+    metadata:
+      labels:
+        app: newsgradient-analize
+    spec:
+      containers:
+      - name: newsgradient-analize
+        image: newsgradient-analize
+        ports:
+        - name: http
+          containerPort: 5000
+          protocol: TCP
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        env:
+          - name: FLASK_ENV
+            value: production
+        resources:
+          requests:
+            memory: 200Mi
+            cpu: 100m
+          limits:
+            memory: 200Mi
+            cpu: 100m
