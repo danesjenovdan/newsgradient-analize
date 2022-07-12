@@ -1,0 +1,11 @@
+version: '3'
+services:
+  flask:
+    build: ./api
+    ports:
+      - 5000:5000
+    volumes:
+      - ./api:/api
+    environment:
+      APP_ENV: development
+    entrypoint: ./run.sh
