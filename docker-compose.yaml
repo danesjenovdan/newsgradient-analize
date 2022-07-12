@@ -8,5 +8,4 @@ services:
       - ./api:/api
     environment:
       APP_ENV: development
-    # entrypoint: ./run.sh
-    command: flask run --host=0.0.0.0
+    entrypoint: ./run.sh
