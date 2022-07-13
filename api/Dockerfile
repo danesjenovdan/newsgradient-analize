@@ -4,5 +4,5 @@ COPY ./requirements.txt /app/
 WORKDIR /app/
 RUN pip install -r requirements.txt
 COPY . /app/
-RUN mkdir -p files
+RUN mkdir -p uploaded_data
 CMD ["flask", "run", "--host=0.0.0.0"]

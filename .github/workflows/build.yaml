@@ -24,7 +24,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./api
+          context: .
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/newsgradient-analize:${{ github.sha }}

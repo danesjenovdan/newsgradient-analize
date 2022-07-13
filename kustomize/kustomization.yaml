@@ -5,6 +5,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - pvc.yaml
 images:
   - name: newsgradient-analize
     newName: rg.fr-par.scw.cloud/djnd/newsgradient-analize
