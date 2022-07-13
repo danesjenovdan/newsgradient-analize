@@ -1,3 +1,4 @@
-flask
-flask_cors
-uwsgi
+Flask==1.0
+Flask-Cors==3.0.10
+Jinja2==3.0.2
+itsdangerous==2.0.1

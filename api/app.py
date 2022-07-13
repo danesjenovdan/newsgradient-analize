@@ -1,12 +1,10 @@
-from urllib import request
 from flask import Flask, request
 from flask_cors import CORS
 import json
 import datetime
-import logging
 
 app = Flask(__name__)
-CORS(app) # ne vem a to rabim
+CORS(app)
 
 UPLOAD_FOLDER = 'uploaded_data/'
 
