@@ -14,6 +14,10 @@ spec:
       labels:
         app: newsgradient-analize
     spec:
+      volumes:
+        - name: newsgradient-analize-persistent-storage
+          persistentVolumeClaim:
+            claimName: newsgradient-analize-pvc
       containers:
       - name: newsgradient-analize
         image: newsgradient-analize
@@ -21,6 +25,9 @@ spec:
         - name: http
           containerPort: 5000
           protocol: TCP
+        volumeMounts:
+          - name: newsgradient-analize-persistent-storage
+            mountPath: /app/uploaded_data
         livenessProbe:
           tcpSocket:
             port: http
