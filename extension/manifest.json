@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Newsgradient analize",
+  "version": "0.0.1",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "48": "icons/favicon.ico"
+  },
+
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+
+  "permissions": [
+    "activeTab",
+    "menus", 
+    "clipboardWrite", 
+    "notifications", 
+    "storage",
+    "contextMenus"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/favicon.ico",
+    "default_title": "Newsgradient analize",
+    "default_popup": "popup/forma.html"
+  }
+
+}
