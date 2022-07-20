@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+
+<body>
+  <div id="popup-content">
+    <div class="container">
+      <!-- <h2>Newsgradient</h2> -->
+      <img src="ng_logo.svg" class="logo-image">
+      <div class="question">
+        <label for="author">Your name</label>
+        <input type="text" id="author" name="author" />
+      </div>
+      <div class="question">
+        <label for="url">Article URL</label>
+        <input type="url" id="url" name="url" />
+      </div>
+      <div class="question">
+        <label for="article-title">Article title</label>
+        <input type="text" id="article-title" name="article-title" />
+      </div>
+      <div class="question">
+        <label for="veracity">Veracity score: <span id="chosen-veracity">5.00</span></label>
+        <input type="range" step="0.01" id="veracity" name="veracity" min="0" max="10" />
+      </div>
+      <div class="question">
+        <h4>Party biases</h4>
+        <div class="party">
+          <label for="stranka1">Stranka 1</label>
+          <select class="party-select" id="stranka1" name="stranka1">
+            <option value="none">--</option>
+            <option value="negative">negative</option>
+            <option value="neutral">neutral</option>
+            <option value="positive">positive</option>
+          </select>
+        </div>
+        <div class="party">
+          <label for="stranka2">Stranka 2</label>
+          <select class="party-select" id="stranka2" name="stranka2">
+            <option value="none">--</option>
+            <option value="negative">negative</option>
+            <option value="neutral">neutral</option>
+            <option value="positive">positive</option>
+          </select>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="submit-button">Submit</button>
+        <button id="reset-button">Reset form</button>
+      </div>
+      <div id="success-message">Saved!</div>
+      <div id="error-message">There was an error :(</div>
+    </div>
+  </div>
+  <script src="popup-script.js"></script>
+</body>
+
+</html>
