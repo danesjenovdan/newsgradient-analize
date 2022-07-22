@@ -9,4 +9,4 @@ resources:
 images:
   - name: newsgradient-analize
     newName: rg.fr-par.scw.cloud/djnd/newsgradient-analize
-    newTag: '6e7c2cd31abfd59bce651774addcc22024956eeb'
+    newTag: '805ad2e9c12a1f71e847ea1fd14cf7ed45b5663a'
