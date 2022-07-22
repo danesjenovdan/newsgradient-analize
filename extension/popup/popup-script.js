@@ -4,13 +4,13 @@ async function clearStorage() {
 
   // reset input fields
   document.getElementById("veracity").value = 5
-  // document.getElementById("chosen-veracity").innerText = "5.00"
+  document.getElementById("chosen-veracity").innerText = "5.00"
   document.querySelectorAll('.party-select').forEach(item => {
     item.value = 'none'
   })
   // hide messages
-  document.getElementById('success-message').style.display = 'none'
-  document.getElementById('error-message').style.display = 'none'
+  // document.getElementById('success-message').style.display = 'none'
+  // document.getElementById('error-message').style.display = 'none'
 }
 
 async function showPopup() {
@@ -64,6 +64,9 @@ async function showPopup() {
       browser.storage.local.set({
         "newsgradient-author": e.target.value
       })
+      // hide messages
+      document.getElementById('success-message').style.display = 'none'
+      document.getElementById('error-message').style.display = 'none'
     })
 
     document.getElementById("veracity").addEventListener("change", e => {
@@ -71,19 +74,23 @@ async function showPopup() {
       browser.storage.local.set({
         "veracity": e.target.value
       })
+      // hide messages
+      document.getElementById('success-message').style.display = 'none'
+      document.getElementById('error-message').style.display = 'none'
     })
 
     document.querySelectorAll('.party-select').forEach(item => {
       item.addEventListener('change', e => {
-        console.log("change!", e.target.value)
         browser.storage.local.get('party_biases').then(s => {
           const party_biases = s['party_biases']
-          console.log("ecisting", party_biases)
           party_biases[e.target.id] = e.target.value
           browser.storage.local.set({
             "party_biases": party_biases
           })
         })
+        // hide messages
+        document.getElementById('success-message').style.display = 'none'
+        document.getElementById('error-message').style.display = 'none'
       })
     })
 
@@ -118,6 +125,7 @@ async function showPopup() {
         // reset local storage when successfully submitted
         clearStorage()
         // show success message
+        console.log("SUCESS")
         document.getElementById('success-message').style.display = 'block'
       } else {
         // show error
@@ -132,6 +140,8 @@ async function showPopup() {
     // on reset event listener
     document.getElementById("reset-button").addEventListener("click", (e) => {
       clearStorage()
+      document.getElementById('success-message').style.display = 'none'
+      document.getElementById('error-message').style.display = 'none'
     })
 
     // function omg() {
