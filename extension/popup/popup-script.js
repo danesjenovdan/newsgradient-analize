@@ -143,13 +143,6 @@ async function showPopup() {
       document.getElementById('success-message').style.display = 'none'
       document.getElementById('error-message').style.display = 'none'
     })
-
-    // function omg() {
-    //   browser.tabs.sendMessage(tabs[0].id, {
-    //     command: "hello",
-    //   });
-    // }
-
   }
 
   await loadDataFromStorage()
@@ -162,19 +155,4 @@ async function showPopup() {
   .then(start)
 }
 
-/**
- * There was an error executing the script.
- * Display the popup's error message, and hide the normal UI.
- */
-function reportExecuteScriptError(error) {
-  console.error(`Failed to execute content script: ${error.message}`);
-}
-
-/**
- * When the popup loads, inject a content script into the active tab.
- * If we couldn't inject the script, handle the error.
- */
-browser.tabs
-  .executeScript({ file: "./../content-script.js" })
-  .then(showPopup)
-  .catch(reportExecuteScriptError);
+showPopup()

@@ -12,7 +12,7 @@ UPLOAD_FOLDER = 'uploaded_data/'
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'GET':
-        return "<p>Hello, World</p>"
+        return "<p>It works!</p>"
     if request.method == 'POST':
         # json
         request_data = request.get_json()
