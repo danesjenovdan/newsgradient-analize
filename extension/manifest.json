@@ -1,25 +1,16 @@
 {
   "manifest_version": 2,
-  "name": "Newsgradient analize",
+  "name": "Newsgradient analysis",
   "version": "0.0.1",
-
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "This extension is a tool for the Newsgradient project to help collect data from news articles.",
 
   "icons": {
     "48": "icons/favicon.ico"
   },
 
-  "background": {
-    "scripts": ["background-script.js"]
-  },
-
   "permissions": [
     "activeTab",
-    "menus", 
-    "clipboardWrite", 
-    "notifications", 
-    "storage",
-    "contextMenus"
+    "storage"
   ],
 
   "browser_action": {

@@ -5,11 +5,10 @@
   "author": "danesjenovdan",
   "license": "UNLICENSED",
   "scripts": {
-    "d": "web-ext run --source-dir=src --firefox=firefox-developer-edition",
     "dev": "web-ext run --verbose",
-    "build": "web-ext build --source-dir=src"
+    "build": "web-ext build"
   },
   "devDependencies": {
-      "web-ext": "^6.5.0"
+    "web-ext": "^6.5.0"
   }
 }
