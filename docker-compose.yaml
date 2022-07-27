@@ -9,5 +9,5 @@ services:
       - ./api:/app
     environment:
       FLASK_ENV: production
-    # entrypoint: ./run.sh
-    command: flask run --host=0.0.0.0
+    entrypoint: ./run.sh
+    # command: flask run --host=0.0.0.0
