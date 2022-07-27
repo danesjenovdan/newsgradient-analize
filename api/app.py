@@ -23,9 +23,9 @@ def upload_file():
         app.logger.info(str(ct))
 
         # create new json file
-        out_file = open(UPLOAD_FOLDER + str(ct) + ".json", "w")
-        json.dump(request_data, out_file)
+        out_file = open(UPLOAD_FOLDER + str(ct) + ".json", "w", encoding="utf8")
+        json.dump(request_data, out_file, ensure_ascii=False)
         out_file.close()
         
         # return json
-        return json.dumps(request_data)
+        return json.dumps(request_data, ensure_ascii=False)
