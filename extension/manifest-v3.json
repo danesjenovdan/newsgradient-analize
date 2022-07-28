@@ -1,0 +1,24 @@
+{
+    "applications": {
+      "gecko": {
+        "id": "newsgradient@danesjenovdan.si"
+      }
+    },
+    "manifest_version": 3,
+    "name": "Newsgradient analysis",
+    "version": "0.0.1",
+    "description": "This extension is a tool for the Newsgradient project to help collect data from news articles.",
+    "icons": {
+      "16": "icons/favicon.ico"
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "action": {
+      "default_icon": "icons/favicon.ico",
+      "default_title": "Newsgradient analize",
+      "default_popup": "popup/forma.html"
+    },
+    "content_security_policy": {}
+  }
