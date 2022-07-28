@@ -1,12 +1,13 @@
 async function clearStorage() {
   // clear everything except for author
-  await browser.storage.local.remove(["veracity", "party_biases"]);
+  await browser.storage.local.remove(["veracity"]);
+  await browser.storage.local.set({'party_biases': {}})
 
   // reset input fields
   document.getElementById("veracity").value = 5
   document.getElementById("chosen-veracity").innerText = "5.00"
   document.querySelectorAll('.party-select').forEach(item => {
-    item.value = 'none'
+    item.selectedIndex = 0;
   })
   // hide messages
   // document.getElementById('success-message').style.display = 'none'
@@ -17,7 +18,7 @@ async function showPopup() {
 
   async function loadDataFromStorage() {
     browser.storage.local.get(null).then((res) => {
-      console.log("res", res)
+      // console.log("res", res)
       if (res['newsgradient-author']) {
         document.getElementById("author").value = res['newsgradient-author']
       }
@@ -37,6 +38,24 @@ async function showPopup() {
         browser.storage.local.set({'party_biases': {}})
       }
     })
+  }
+
+  function addParties() {
+    const partiesParentElement = document.getElementById("parties")
+    for (const party in PARTIES) {
+      const template = document.createElement('div')
+      template.classList.add("party")
+      template.innerHTML = `
+          <label for="${party}">${PARTIES[party]}</label>
+          <select class="party-select" id="${party}" name="${party}">
+            <option value="none">--</option>
+            <option value="negative">negative</option>
+            <option value="neutral">neutral</option>
+            <option value="positive">positive</option>
+          </select>
+      `;
+      partiesParentElement.appendChild(template)
+    }
   }
 
   async function submit(json) {
@@ -79,6 +98,7 @@ async function showPopup() {
       document.getElementById('error-message').style.display = 'none'
     })
 
+    // add event listener to all party select elements
     document.querySelectorAll('.party-select').forEach(item => {
       item.addEventListener('change', e => {
         browser.storage.local.get('party_biases').then(s => {
@@ -109,7 +129,10 @@ async function showPopup() {
       const party_biases = {}
       const parties = document.getElementsByClassName("party-select")
       for (const party of parties) {
-        party_biases[party.id] = party.value
+        // console.log("Party value ", party.value)
+        if (party.value != "none") {
+          party_biases[party.id] = party.value
+        }
       }
 
       const json = {
@@ -147,8 +170,7 @@ async function showPopup() {
 
   await loadDataFromStorage()
 
-  const all = await browser.storage.local.get(null);
-  console.log("all ", all)
+  addParties()
 
   browser.tabs
   .query({ active: true, currentWindow: true })
