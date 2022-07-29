@@ -1,0 +1,12 @@
+{
+    "addons": {
+        "{abcd1234-1abc-1234-12ab-abcdef123456}": {
+            "updates": [
+                {
+                    "version": "0.0.2",
+                    "update_link": "https://github.com/danesjenovdan/newsgradient-analize/archive/refs/tags/v0.0.2.zip"
+                }
+            ]
+        }
+    }
+}

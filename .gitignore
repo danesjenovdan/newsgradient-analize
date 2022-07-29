@@ -3,3 +3,5 @@ api/uploaded_data
 __pycache__
 
 extension/node_modules
+
+web-ext-artifacts

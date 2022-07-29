@@ -6,11 +6,11 @@
   },
   "manifest_version": 2,
   "name": "Newsgradient analysis",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "This extension is a tool for the Newsgradient project to help collect data from news articles.",
 
   "icons": {
-    "16": "icons/favicon.png"
+    "16": "icons/favicon.ico"
   },
 
   "permissions": [
@@ -19,7 +19,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/favicon.png",
+    "default_icon": "icons/favicon.ico",
     "default_title": "Newsgradient analize",
     "default_popup": "popup/forma.html"
   },

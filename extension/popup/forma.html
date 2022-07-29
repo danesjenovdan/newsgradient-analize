@@ -27,26 +27,8 @@
         <label for="veracity">Veracity score: <span id="chosen-veracity">5.00</span></label>
         <input type="range" step="0.01" id="veracity" name="veracity" min="0" max="10" />
       </div>
-      <div class="question">
+      <div id="parties" class="question">
         <h4>Party biases</h4>
-        <div class="party">
-          <label for="stranka1">Stranka 1</label>
-          <select class="party-select" id="stranka1" name="stranka1">
-            <option value="none">--</option>
-            <option value="negative">negative</option>
-            <option value="neutral">neutral</option>
-            <option value="positive">positive</option>
-          </select>
-        </div>
-        <div class="party">
-          <label for="stranka2">Stranka 2</label>
-          <select class="party-select" id="stranka2" name="stranka2">
-            <option value="none">--</option>
-            <option value="negative">negative</option>
-            <option value="neutral">neutral</option>
-            <option value="positive">positive</option>
-          </select>
-        </div>
       </div>
       <div class="buttons">
         <button id="submit-button">Submit</button>
@@ -56,6 +38,7 @@
       <div id="error-message">There was an error :(</div>
     </div>
   </div>
+  <script src="parties.js"></script>
   <script src="popup-script.js"></script>
 </body>
 

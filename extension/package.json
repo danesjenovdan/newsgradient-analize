@@ -1,10 +1,11 @@
 {
   "name": "newsgradient-analize-extension",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "private": true,
   "author": "danesjenovdan",
-  "license": "UNLICENSED",
+  "license": "The Unlicense",
   "scripts": {
+    "d": "web-ext run --firefox=firefox-developer-edition",
     "dev": "web-ext run --verbose",
     "build": "web-ext build"
   },
