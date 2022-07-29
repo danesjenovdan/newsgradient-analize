@@ -50,11 +50,14 @@ An example of sent json:
     "party_biases": [
         "Party 1": "positive",
         "Party 2": "negative",
-        "Party 3": "neutral",
-        "Party 4": null
+        "Party 3": "neutral"
     ]
 }
 ```
+
+### How to change parties
+
+Parties are defined in parties.js file in the 'extension/popup' folder, you can add new key-value pairs or delete existing ones.
 
 ### Usage
 

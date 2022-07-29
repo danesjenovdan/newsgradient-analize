@@ -19,7 +19,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/favicon.ico",
+    "default_icon": "icons/favicon.png",
     "default_title": "Newsgradient analize",
     "default_popup": "popup/forma.html"
   },

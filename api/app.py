@@ -19,8 +19,8 @@ def upload_file():
         # get timestamp
         ct = datetime.datetime.now()
         # print out
-        app.logger.info(json.dumps(request_data))
-        app.logger.info(str(ct))
+        # app.logger.info(json.dumps(request_data))
+        # app.logger.info(str(ct))
 
         # create new json file
         out_file = open(UPLOAD_FOLDER + str(ct) + ".json", "w", encoding="utf8")

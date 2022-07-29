@@ -7,7 +7,7 @@ async function clearStorage() {
   document.getElementById("veracity").value = 5
   document.getElementById("chosen-veracity").innerText = "5.00"
   document.querySelectorAll('.party-select').forEach(item => {
-    item.selectedIndex = 0;
+    item.selectedIndex = 0
   })
   // hide messages
   // document.getElementById('success-message').style.display = 'none'
@@ -43,18 +43,48 @@ async function showPopup() {
   function addParties() {
     const partiesParentElement = document.getElementById("parties")
     for (const party in PARTIES) {
-      const template = document.createElement('div')
-      template.classList.add("party")
-      template.innerHTML = `
-          <label for="${party}">${PARTIES[party]}</label>
-          <select class="party-select" id="${party}" name="${party}">
-            <option value="none">--</option>
-            <option value="negative">negative</option>
-            <option value="neutral">neutral</option>
-            <option value="positive">positive</option>
-          </select>
-      `;
-      partiesParentElement.appendChild(template)
+      // create div
+      const div = document.createElement('div')
+      div.setAttribute("class", "party")
+      // create label
+      const label = document.createElement('label')
+      const labelContent = document.createTextNode(PARTIES[party])
+      label.setAttribute("for", party);
+      label.appendChild(labelContent);
+      // create select
+      const select = document.createElement('select')
+      select.setAttribute("class", "party-select")
+      select.setAttribute("id", party)
+      select.setAttribute("name", party)
+      // option none
+      const optionNone = document.createElement('option')
+      optionNone.setAttribute("value", "none")
+      const optionNoneContent = document.createTextNode('--')
+      optionNone.appendChild(optionNoneContent)
+      select.appendChild(optionNone)
+      // option negative
+      const optionNegative = document.createElement('option')
+      optionNegative.setAttribute("value", "negative")
+      const optionNegativeContent = document.createTextNode('negative')
+      optionNegative.appendChild(optionNegativeContent)
+      select.appendChild(optionNegative)
+      // option neutral
+      const optionNeutral = document.createElement('option')
+      optionNeutral.setAttribute("value", "neutral")
+      const optionNeutralContent = document.createTextNode('neutral')
+      optionNeutral.appendChild(optionNeutralContent)
+      select.appendChild(optionNeutral)
+      // option positive
+      const optionPositive = document.createElement('option')
+      optionPositive.setAttribute("value", "positive")
+      const optionPositiveContent = document.createTextNode('positive')
+      optionPositive.appendChild(optionPositiveContent)
+      select.appendChild(optionPositive)
+
+      div.appendChild(label)
+      div.appendChild(select)
+
+      partiesParentElement.appendChild(div)
     }
   }
 
