@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 import json
 import datetime
+from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)
@@ -29,3 +30,7 @@ def upload_file():
         
         # return json
         return json.dumps(request_data, ensure_ascii=False)
+
+@app.route("/extension/updates.json", methods=['GET'])
+def updates():
+    return send_from_directory('extension', 'updates.json')
