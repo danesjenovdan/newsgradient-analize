@@ -1,4 +1,4 @@
-# Newsgradient Analysis
+# Newsgradient Analysis [deployment disabled]
 
 This is a tool for the [Newsgradient project](https://github.com/danesjenovdan/newsgradient) to help collect data from news articles. It consists of two parts: 
 
